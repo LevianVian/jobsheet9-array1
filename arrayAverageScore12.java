@@ -1,24 +1,37 @@
-
 import java.util.Scanner;
 
 public class arrayAverageScore12 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] scores = new int[10];
-        double total = 0;
-        double average;
 
-        for (int i = 0; i < scores.length; i++) {
-            System.out.print("Enter student score " + (i + 1) + ": ");
+        System.out.print("Enter the number of students: ");
+        int n = sc.nextInt();
+
+        int[] scores = new int[n];
+        double totalPass = 0, totalFail = 0;
+        int passCount = 0, failCount = 0;
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter the final score " + i + ": ");
             scores[i] = sc.nextInt();
+
+            if (scores[i] >= 70) {
+                totalPass += scores[i];
+                passCount++;
+            } else {
+                totalFail += scores[i];
+                failCount++;
+            }
         }
 
-        for (int i = 0; i < scores.length; i++) {
-            total += scores[i];
-        }
+        if (passCount > 0)
+            System.out.println("The average score of students who passed is " + (totalPass / passCount));
+        else
+            System.out.println("No students passed.");
 
-        average = total / scores.length;
-        System.out.println("The class average score is: " + average);
-
+        if (failCount > 0)
+            System.out.println("The average score of students who failed is " + (totalFail / failCount));
+        else
+            System.out.println("No students failed.");
     }
 }
