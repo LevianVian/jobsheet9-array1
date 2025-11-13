@@ -11,11 +11,11 @@ public class arrayValue12 {
         }
 
         for (int i = 0; i < finalscore.length; i++) {
-            if (finalscore[i] > 70) {
-            System.out.println("Student " + (i + 1) + " passed: " + finalscore[i]);
-            }
+            if (finalscore[i] > 70)
+                System.out.println("Student " + i + " Passed!");
+            else
+                System.out.println("Student " + i + " Failed!");
         }
-
 
         for (int i = 0; i < 10; i++) {
             System.out.println("Final score " + i + ": " + finalscore[i]);
